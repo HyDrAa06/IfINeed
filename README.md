@@ -85,3 +85,48 @@ int fieldSize = int.Parse(Console.ReadLine());
             }
 
             Console.Write(string.Join(" ", field));
+
+
+
+
+
+
+
+
+## Triagnle
+using System;
+
+namespace Triangle
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            PrintTriangle(11);
+        }
+
+        static void PrintTriangle(int number)
+        {
+            for(int i =1; i <= number; i++)
+            {
+                PrintLine(0, i);                  
+            }
+
+            for (int i = number - 1; i > 0; i--)
+            {
+                PrintLine(0, i);
+            }
+        }
+
+        static void PrintLine(int start, int end)
+        {
+            for (int J = start; J < end; J++)
+            {
+                Console.Write($"{J + 1} ");
+            }
+            Console.WriteLine();
+        }
+
+
+    }
+}
