@@ -130,3 +130,63 @@ namespace Triangle
 
     }
 }
+
+
+
+
+using System;
+
+namespace GreaterOfTwoValues
+{
+    internal class Program
+    {
+        static int GetMax(int n1, int n2)
+        {
+            int result = Math.Max(n1, n2);
+            return result;
+        }
+        static string GetMax(string s1, string s2)
+        {
+            int difference = s1.CompareTo(s2);
+
+            string result;
+
+            if (difference < 0)
+            {
+                result = s2;
+            }
+            else
+            {
+                result = s1;
+            }
+            return result;
+        }
+
+        static char GetMax(char c1, char c2)
+        {
+            int difference = c1.CompareTo(c2);
+
+            char result;
+
+            if(difference < 0)
+            {
+                result = c2;              
+            }
+            else
+            {
+                result = c1;
+            }
+            return result;
+        }
+        static void Main(string[] args)
+        {
+            int maxInt = GetMax(1, 10);
+            string maxString = GetMax("aaa", "bbb");
+            char maxChar = GetMax('a', 'z');
+
+            Console.WriteLine(maxInt);
+            Console.WriteLine(maxChar);
+            Console.WriteLine(maxString);
+        }
+    }
+}
