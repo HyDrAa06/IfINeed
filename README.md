@@ -190,3 +190,76 @@ namespace GreaterOfTwoValues
         }
     }
 }
+
+
+
+using System;
+using System.Text;
+
+namespace AnonymousThreat
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Input:");
+            
+            List<string> input = Console.ReadLine().Split().ToList();
+
+            string command;
+
+            while ((command = Console.ReadLine()) !="3:1")
+            {
+                string[] commandArgs = command.Split();
+
+                switch (commandArgs[0])
+                {
+                    case "merge":
+                        {
+                            int startIndex=int.Parse(commandArgs[1]);
+                            int endIndex=int.Parse(commandArgs[2]);
+
+                            if(startIndex >= input.Count)
+                            {
+                                continue;
+                            }
+                            if(endIndex >= input.Count)
+                            {
+                                continue;
+                            }
+
+                            StringBuilder builder = new StringBuilder();
+
+                            for(int i = startIndex; i <= endIndex; i++)
+                            {
+                                builder.Append(input[i]);
+                            }
+
+                            string mergeResult = builder.ToString();
+
+                            input.RemoveRange(startIndex, endIndex - startIndex+1);
+
+                            input.Insert(startIndex, mergeResult);
+
+                            break;
+                        }
+
+                    case "divide":
+                        {
+
+                            break;
+                        }
+                    default:
+                        {
+                            throw new ArgumentException("Invalid command!");
+                            
+                        }
+                }
+
+
+
+            }
+            Console.WriteLine(String.Join(" ",input));
+        }
+    }
+}
