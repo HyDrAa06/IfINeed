@@ -227,7 +227,7 @@ namespace AnonymousThreat
                             }
                             if(endIndex >= input.Count)
                             {
-                                continue;
+                                endIndex= input.Count-1;
                             }
 
                             StringBuilder builder = new StringBuilder();
